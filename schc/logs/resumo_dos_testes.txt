@@ -1,0 +1,24 @@
+RESUMO DOS TESTES REALIZADOS
+
+Teste 1 - Ping básico
+Comando: ping6 aaaa::1
+Objetivo: verificar se App, Core e Device estavam se comunicando.
+Resultado: houve respostas do endereço aaaa::1, indicando funcionamento básico da topologia.
+
+Teste 2 - Ping grande antes da fragmentação
+Comando: ping6 -s 1000 -c 1 aaaa::1
+Objetivo: forçar um pacote maior e verificar a necessidade de regra de fragmentação.
+Resultado no App: 100% packet loss.
+Resultado no Core: Protocol fragmentation rule not found.
+Conclusão: o pacote grande exigia fragmentação SCHC, mas ainda não havia regra definida.
+
+Teste 3 - Adição da regra NoAck DW
+Alteração: inserção de RuleID 10/5, modo NoAck, direção DW.
+Objetivo: permitir fragmentação no sentido App -> Device.
+Resultado: a ida passou a ser tratada por regra de fragmentação, mas o retorno ainda precisava de regra UP.
+
+Teste 4 - Adição da regra NoAck UP
+Alteração: inserção de RuleID 11/5, modo NoAck, direção UP.
+Objetivo: permitir fragmentação no sentido Device -> App.
+Resultado final no App: 1 pacote transmitido, 1 recebido, 0% de perda.
+Conclusão: a fragmentação SCHC foi implementada nos dois sentidos e o ping grande funcionou.
