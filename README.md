@@ -9,6 +9,8 @@ The coursework included medium-access protocols, discrete-event simulation, TCP/
 ### SCHC / OpenSCHC experimentation
 Practical experimentation with **Static Context Header Compression (SCHC)** and fragmentation concepts for LPWAN/IoT environments. The portfolio includes my execution logs and screenshots from the experimental environment.
 
+**Academic report:** [SCHC Ping Fragmentation Report (PDF)](docs/schc-ping-fragmentation-report.pdf)
+
 ### Medium Access Protocol Simulations
 Simulation and analysis of **ALOHA, Slotted ALOHA, CSMA, CSMA/CD, MACA, and Ethernet/Binary Exponential Backoff**, focusing on throughput, collisions, latency, and channel utilization.
 
@@ -26,6 +28,8 @@ Graph-based routing experiment applying Dijkstra's algorithm to a multi-node net
 
 ```text
 .
+├── docs/
+│   └── schc-ping-fragmentation-report.pdf
 ├── schc/
 │   └── logs/      # commands and test notes produced during my experiment
 └── README.md
@@ -33,7 +37,7 @@ Graph-based routing experiment applying Dijkstra's algorithm to a multi-node net
 
 ## Attribution note
 
-OpenSCHC and other protocol implementations used during coursework are third-party/course dependencies. I do not claim authorship of those implementations. This repository only publishes my own experiment notes and portfolio documentation.
+OpenSCHC and other protocol implementations used during coursework are third-party/course dependencies. I do not claim authorship of those implementations. This repository only publishes my own experiment notes, report, and portfolio documentation.
 
 ## Author
 
